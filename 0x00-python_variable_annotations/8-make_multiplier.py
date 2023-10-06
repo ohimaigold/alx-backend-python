@@ -4,7 +4,10 @@
 from typing import Callable
 
 
-def make_multiplier(multiplier: float) -> typing.Callable[[float], float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     '''Creates a multiplier function.
     '''
-    return make_multiplier
+    def float_multiply(x: float) -> float:
+        return multiplier * x
+
+    return float_multiply
