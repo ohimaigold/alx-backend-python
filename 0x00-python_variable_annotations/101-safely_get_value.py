@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-'''Task 11's module.
-'''
-import typing
+""" More involved type annotations  """
+from typing import Mapping, Any, Sequence, Union, TypeVar
 
 
 T = TypeVar('T')
-Res = Union[Any, T]
-Def = Union[T, None]
 
 
-def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
-
-
-    if Key in dct:
+def safely_get_value(dct: Mapping, key: Any,
+                     default: Union[T, None] = None
+                     ) -> Union[Any, T]:
+    """ Safely get value """
+    if key in dct:
         return dct[key]
     else:
-        return
+        return default
