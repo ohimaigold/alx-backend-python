@@ -4,12 +4,12 @@
 import typing
 
 
-T = typing.TypeVar('T')
+T = TypeVar('T')
+Res = Union[Any, T]
+Def = Union[T, None]
 
 
-def safely_get_value(dct: typing.Mapping, key: typing.Any, default:
-                     typing.Union[T, None] = None) -> \
-        typing.Union[typing.Any, T]:
+def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
 
 
     if Key in dct:
